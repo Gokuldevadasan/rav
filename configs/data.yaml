@@ -1,0 +1,18 @@
+dataset:
+  name: coco2017
+  root: data/coco2017
+
+splits:
+  train: train2017
+  val: val2017
+  test: test2017
+
+paths:
+  annotations: data/coco2017/annotations
+  train_manifest: data/train/manifest.jsonl
+  val_manifest: data/val/manifest.jsonl
+  test_manifest: data/test/manifest.jsonl
+
+output:
+  statistics: data/processed/coco_statistics.json
+  inspection_dir: data/processed/inspection

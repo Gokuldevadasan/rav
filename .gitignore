@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+
+# RAV runtime artifacts
+data/*
+!data/README.md
+models/checkpoints/
+models/base/
+models/vlm/
+models/adapters/
+models/exported/
+experiments/runs/
+experiments/logs/
+experiments/results/
+*.log
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

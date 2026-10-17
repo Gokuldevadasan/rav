@@ -1,0 +1,30 @@
+model:
+  name: HuggingFaceTB/SmolVLM-256M-Instruct
+  revision: null
+  trust_remote_code: false
+training:
+  output_dir: models/adapters
+  epochs: 3
+  batch_size: 1
+  gradient_accumulation: 8
+  learning_rate: 0.0002
+  warmup: 0
+  weight_decay: 0.01
+  logging_steps: 1
+  save_steps: 250
+  evaluation_strategy: steps
+  precision: fp16
+lora:
+  enabled: true
+  rank: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj]
+data:
+  train_manifest: data/train/manifest.jsonl
+  val_manifest: data/val/manifest.jsonl
+  max_samples: null
+hardware:
+  device: cuda
+  gradient_checkpointing: true
+  quantization: 4bit
